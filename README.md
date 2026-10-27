@@ -1,5 +1,31 @@
 # OGNETFLIX
 
+**A movie-rental workflow demo, with the original academic Java/JSP source alongside it.**
+
+[Open the demo](https://pologram1.github.io/OGNETFLIX/) · [Portfolio case study](https://pologram1.github.io/POLO-TECH/ognetflix.html) · [Code guide](docs/CODE_GUIDE.md)
+
+[![Validate and publish](https://github.com/pologram1/OGNETFLIX/actions/workflows/pages.yml/badge.svg)](https://github.com/pologram1/OGNETFLIX/actions/workflows/pages.yml)
+
+![OGNETFLIX browser demo](docs/images/preview.jpg)
+
+## At a glance
+
+**Status:** working browser demo + preserved academic server source. The browser version runs on GitHub Pages and saves on the visitor’s device. The original Java application needs Tomcat and MySQL; its missing/mismatched page handlers are documented in the [source guide](source/README.md).
+
+**Engineering focus:** one-at-home rental constraints, queue ordering, explicit watched/returned states, automatic dispatch, and deactivation that preserves history.
+
+## Architecture
+
+| Browser demo | Original server application |
+| --- | --- |
+| HTML shell → JavaScript controller → immutable command model → validated local storage. | JSP pages → Java business/authentication helpers → JDBC → MySQL. |
+| `src/js/`, `src/css/`, `assets/`, `tests/`. | `source/OGNETFLIX/`; separate runtime and database requirements. |
+
+## Collaboration
+
+**Miguel A. De Jesus and Ricardo J. Lopez Ortiz** are the academic project collaborators. The repository presents the team's movie-rental application and a browser adaptation for portfolio review. Individual subsystem ownership is not documented; credits are shared rather than assigning unsupported personal claims.
+
+
 Collaborators: **Miguel A. De Jesus** and **Ricardo J. Lopez Ortiz**.
 
 A collaborative academic movie-rental application for CPEN 410, Universidad Ana G. Méndez, Gurabo. This repository contains the original Java/JSP project and a browser adaptation that runs on GitHub Pages.
