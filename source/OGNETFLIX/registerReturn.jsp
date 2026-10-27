@@ -1,3 +1,4 @@
+<%-- Archived mismatch: this file inserts movie metadata via addMovie, despite its return-handler name. See source/README.md. --%>
 <%@ page import="java.lang.*"%>
 <%//Import the java.sql package to use the ResultSet class %>
 <%@ page import="java.sql.*"%>

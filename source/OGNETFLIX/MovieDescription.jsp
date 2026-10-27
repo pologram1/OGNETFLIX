@@ -1,3 +1,4 @@
+<%-- Movie details, role-aware back navigation, and customer queue actions. --%>
 <%@ page import="java.lang.*"%>
 <%//Import the java.sql package to use the ResultSet class %>
 <%@ page import="java.sql.*"%>

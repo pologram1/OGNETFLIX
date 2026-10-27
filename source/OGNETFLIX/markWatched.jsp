@@ -1,3 +1,4 @@
+<%-- Marks the customer's requested rental as watched through the Java manager. --%>
 <%@ page import="java.lang.*"%>
 <%//Import the java.sql package to use the ResultSet class %>
 <%@ page import="java.sql.*"%>

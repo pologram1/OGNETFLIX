@@ -1,3 +1,4 @@
+<%-- Clears the signed-in session user and redirects to the login form. --%>
 <%@ page import="java.lang.*"%>
 
 <%

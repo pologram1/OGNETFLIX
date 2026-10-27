@@ -1,3 +1,4 @@
+/* Server authentication, role/page checks, registration, and legacy hashing. Accesses MySQL; the browser demo does not use this class. */
 //This class belongs to the ut package
 package ut;
 

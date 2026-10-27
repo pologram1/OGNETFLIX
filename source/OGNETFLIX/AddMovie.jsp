@@ -1,3 +1,4 @@
+<%-- Movie-entry form. SaveMovie.jsp is referenced but absent from this archive. --%>
 
 <%@ page import="java.lang.*" %>
 <%//Import the java.sql package to use the ResultSet class %>

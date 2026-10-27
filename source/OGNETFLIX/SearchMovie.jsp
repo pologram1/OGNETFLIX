@@ -1,3 +1,4 @@
+<%-- Customer genre search; retains the genre when navigating to and from movie details. --%>
 <%@ page import="java.lang.*"%>
 <%//Import the java.sql package to use the ResultSet class %>
 <%@ page import="java.sql.*"%>

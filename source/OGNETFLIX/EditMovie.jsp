@@ -1,3 +1,4 @@
+<%-- Loads a movie and submits edited fields to UpdateMovie.jsp. --%>
 <%@ page import="java.lang.*"%>
 <%//Import the ut package for accessing the database %>
 <%@ page import="ut.*"%>

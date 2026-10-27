@@ -1,3 +1,4 @@
+<%-- Login handler: authenticates the user, records the session, and routes by role. --%>
 <%@ page import="java.lang.*"%>
 <%@ page import="ut.*"%>
 <%//Import the java.sql package to use the ResultSet class %>

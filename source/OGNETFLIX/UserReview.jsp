@@ -1,3 +1,4 @@
+<%-- Administrator view of a customer queue/rentals; the return form targets registerReturn.jsp. --%>
 <%@ page import="java.lang.*"%>
 <%//Import the java.sql package to use the ResultSet class %>
 <%@ page import="java.sql.*"%>

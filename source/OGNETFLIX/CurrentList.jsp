@@ -1,3 +1,4 @@
+<%-- Customer queue/current rentals. The archive references a missing removeFromQueue.jsp handler. --%>
 <%@ page import="java.lang.*"%>
 <%//Import the java.sql package to use the ResultSet class %>
 <%@ page import="java.sql.*"%>

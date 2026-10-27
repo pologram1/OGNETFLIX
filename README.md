@@ -4,6 +4,10 @@ Collaborators: **Miguel A. De Jesus** and **Ricardo J. Lopez Ortiz**.
 
 A collaborative academic movie-rental application for CPEN 410, Universidad Ana G. Méndez, Gurabo. This repository contains the original Java/JSP project and a browser adaptation that runs on GitHub Pages.
 
+## Explore the code
+
+Read the [code guide](docs/CODE_GUIDE.md) for the repository map, rental rules, state flow, and contribution checks. The frontend is organized into `src/js/` and `src/css/`. The [original source guide](source/README.md) maps the JSP pages and Java classes.
+
 ## Run the browser demo
 
 Open **https://pologram1.github.io/OGNETFLIX/**. No installation or database is needed.
@@ -40,7 +44,7 @@ The administrator workspace also creates local demo profiles and adds, edits, de
 
 The only Java configuration changes replace hard-coded database connection settings with environment variables and update the MySQL driver class name. JSP exception redirects and application navigation are retained.
 
-To run the original application, use Apache Tomcat, a compatible JDK, MySQL, and MySQL Connector/J. Restore your original `og_netflix` schema and seed data (not supplied in this archive). Set these environment variables before starting Tomcat:
+To run the original application, use Apache Tomcat, a compatible JDK, MySQL, MySQL Connector/J, and Apache Commons Codec. Restore your original `og_netflix` schema and seed data (not supplied in this archive). Set these environment variables before starting Tomcat:
 
 ```sh
 export OGNETFLIX_DB_URL='jdbc:mysql://localhost:3306/og_netflix'
@@ -50,7 +54,7 @@ export OGNETFLIX_DB_PASSWORD='your_local_database_password'
 
 On Windows PowerShell, use `$env:OGNETFLIX_DB_URL`, `$env:OGNETFLIX_DB_USER`, and `$env:OGNETFLIX_DB_PASSWORD` instead. Keep the real values outside this repository.
 
-Place Connector/J in the application’s `WEB-INF/lib` directory, compile the Java sources into `WEB-INF/classes`, and deploy `source/OGNETFLIX` to Tomcat. The archived project is academic source, not a production-ready service.
+Place Connector/J and Commons Codec in the application’s `WEB-INF/lib` directory, compile the Java sources into `WEB-INF/classes` with those dependencies on the classpath, and deploy `source/OGNETFLIX` to Tomcat. The archived project is academic source, not a production-ready service.
 
 ## Development
 

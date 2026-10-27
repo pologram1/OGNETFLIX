@@ -1,3 +1,4 @@
+<%-- Administrator navigation, after session and page-permission checks. --%>
 <%@ page import="java.lang.*"%>
 <%//Import the java.sql package to use the ResultSet class %>
 <%@ page import="java.sql.*"%>

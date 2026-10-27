@@ -1,3 +1,4 @@
+/* Persistence infrastructure: environment configuration and JDBC connection/statement lifecycle. Original SQL-string helpers are retained; see source/README.md. */
 //This class belongs to the ut package
 package ut;
 

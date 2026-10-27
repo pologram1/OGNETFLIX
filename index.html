@@ -1,9 +1,195 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore OGNETFLIX, a movie rental demo by Miguel A. De Jesus and Ricardo J. Lopez Ortiz."><title>OGNETFLIX · Movie Rental Demo</title><link rel="stylesheet" href="styles.css"><script type="module" src="app.js"></script><link rel="icon" href="assets/identity.svg" type="image/svg+xml"></head><body><a class="skip" href="#main">Skip to content</a><header><div class="shell header"><a class="brand" href="#catalog"><span class="brand-mark" aria-hidden="true">▶</span> OGNETFLIX</a><span class="demo-tag">INTERACTIVE DEMO</span><div class="workspace"><label for="workspace">Workspace</label><select id="workspace"><option value="member">Member</option><option value="admin">Administrator</option></select></div><a class="portfolio-link" href="https://pologram1.github.io/POLO-TECH/ognetflix.html">Project details ↗</a></div><nav class="shell" aria-label="App navigation"><a href="#catalog">Discover</a><a href="#queue">My queue <span id="queue-badge">0</span></a><a href="#rentals">At home</a><a href="#history">History</a><a id="admin-nav" href="#admin" hidden>Administration</a></nav></header>
-<main id="main" class="shell"><div class="demo-info"><span class="dot" aria-hidden="true"></span><span>A browser version of our Java movie-rental project. Changes save on this device.</span><button id="about-demo" type="button">How it works</button></div><div class="member-bar"><label>Viewing as<select id="member"></select></label><p id="member-summary"></p></div><div id="content"></div></main>
-<footer class="shell"><div><strong>OGNETFLIX</strong><p>Collaborators: Miguel A. De Jesus &amp; Ricardo J. Lopez Ortiz</p><small>Academic project · Polo Studios · No movies are streamed or shipped.</small></div><div><a href="https://github.com/pologram1/OGNETFLIX" target="_blank" rel="noopener noreferrer">GitHub source ↗</a><button id="reset" type="button">Reset demo</button></div></footer>
-<p id="toast" role="status" aria-live="polite" hidden></p>
-<dialog id="movie-dialog" aria-labelledby="movie-title"><button class="dialog-close" data-close="movie-dialog" aria-label="Close movie details">×</button><div id="movie-detail"></div></dialog>
-<dialog id="editor" aria-labelledby="editor-title"><form id="movie-form"><div class="dialog-head"><div><p class="eyebrow">CATALOG MANAGEMENT</p><h2 id="editor-title">Add a movie</h2></div><button type="button" data-close="editor" aria-label="Close editor">×</button></div><input id="movie-id" type="hidden"><div class="form-grid"><label>Title<input name="title" required maxlength="200"></label><label>Genre<select name="genre"><option>Action</option><option>Adventure</option><option>Comedy</option><option>Drama</option><option>Family</option><option>History</option><option>Science Fiction</option><option>Thriller</option></select></label><label>Release year<input name="year" type="number" min="1888" max="2100"></label><label>Country<input name="country" maxlength="100"></label><label>Director<input name="director" maxlength="200"></label><label>Cast<input name="actors" maxlength="500"></label><label class="wide">Description<textarea name="plot" rows="3" maxlength="2500"></textarea></label><label class="wide">Poster URL<input name="image" type="text" maxlength="1500000" placeholder="https://…"></label><label class="wide">Or upload a poster<input id="poster-file" type="file" accept="image/jpeg,image/png,image/webp"><small>JPEG, PNG or WebP, up to 1 MB.</small></label></div><img id="poster-preview" class="poster-preview" alt="Poster preview" hidden><p id="editor-message" role="status"></p><button class="primary" type="submit">Save movie</button></form></dialog>
-<dialog id="help" aria-labelledby="help-title"><div class="dialog-head"><h2 id="help-title">The rental journey.</h2><button data-close="help" aria-label="Close help">×</button></div><ol class="help-list"><li><strong>Discover.</strong> Open a movie and add it to your queue.</li><li><strong>Dispatch.</strong> Switch to Administrator, choose the member, and dispatch their next active title.</li><li><strong>Watch.</strong> Switch to Member and mark the movie as watched in At home.</li><li><strong>Return.</strong> An administrator registers the return. The next active queued movie dispatches automatically.</li></ol><p>This is a local demo. The workspace switch demonstrates roles; it is not account authentication. No real rental, payment, or streaming service is connected.</p><p>The original Java/JSP application remains in the GitHub repository.</p></dialog>
-<dialog id="confirm" aria-labelledby="confirm-title"><form method="dialog"><p class="eyebrow">START FRESH</p><h2 id="confirm-title">Reset your demo?</h2><p>This restores the sample catalog and clears the profiles, queues, and rentals stored by this demo in this browser.</p><div class="actions"><button value="cancel">Keep my demo</button><button class="primary" value="reset">Reset demo</button></div></form></dialog>
-</body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore OGNETFLIX, a movie rental demo by Miguel A. De Jesus and Ricardo J. Lopez Ortiz."
+    />
+    <title>OGNETFLIX · Movie Rental Demo</title>
+    <link rel="stylesheet" href="src/css/styles.css" />
+    <script type="module" src="src/js/app.js"></script>
+    <link rel="icon" href="assets/identity.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <div class="shell header">
+        <a class="brand" href="#catalog"
+          ><span class="brand-mark" aria-hidden="true">▶</span> OGNETFLIX</a
+        ><span class="demo-tag">INTERACTIVE DEMO</span>
+        <div class="workspace">
+          <label for="workspace">Workspace</label
+          ><select id="workspace">
+            <option value="member">Member</option>
+            <option value="admin">Administrator</option>
+          </select>
+        </div>
+        <a
+          class="portfolio-link"
+          href="https://pologram1.github.io/POLO-TECH/ognetflix.html"
+          >Project details ↗</a
+        >
+      </div>
+      <nav class="shell" aria-label="App navigation">
+        <a href="#catalog">Discover</a
+        ><a href="#queue">My queue <span id="queue-badge">0</span></a
+        ><a href="#rentals">At home</a><a href="#history">History</a
+        ><a id="admin-nav" href="#admin" hidden>Administration</a>
+      </nav>
+    </header>
+    <main id="main" class="shell">
+      <div class="demo-info">
+        <span class="dot" aria-hidden="true"></span
+        ><span
+          >A browser version of our Java movie-rental project. Changes save on
+          this device.</span
+        ><button id="about-demo" type="button">How it works</button>
+      </div>
+      <div class="member-bar">
+        <label>Viewing as<select id="member"></select></label>
+        <p id="member-summary"></p>
+      </div>
+      <!-- Route views are rendered here by src/js/app.js. -->
+      <div id="content"></div>
+    </main>
+    <footer class="shell">
+      <div>
+        <strong>OGNETFLIX</strong>
+        <p>Collaborators: Miguel A. De Jesus &amp; Ricardo J. Lopez Ortiz</p>
+        <small
+          >Academic project · Polo Studios · No movies are streamed or
+          shipped.</small
+        >
+      </div>
+      <div>
+        <a
+          href="https://github.com/pologram1/OGNETFLIX"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub source ↗</a
+        ><button id="reset" type="button">Reset demo</button>
+      </div>
+    </footer>
+    <p id="toast" role="status" aria-live="polite" hidden></p>
+    <!-- Shared dialogs stay mounted when the active view changes. -->
+    <dialog id="movie-dialog" aria-labelledby="movie-title">
+      <button
+        class="dialog-close"
+        data-close="movie-dialog"
+        aria-label="Close movie details"
+      >
+        ×
+      </button>
+      <div id="movie-detail"></div>
+    </dialog>
+    <dialog id="editor" aria-labelledby="editor-title">
+      <form id="movie-form">
+        <div class="dialog-head">
+          <div>
+            <p class="eyebrow">CATALOG MANAGEMENT</p>
+            <h2 id="editor-title">Add a movie</h2>
+          </div>
+          <button type="button" data-close="editor" aria-label="Close editor">
+            ×
+          </button>
+        </div>
+        <input id="movie-id" type="hidden" />
+        <div class="form-grid">
+          <label>Title<input name="title" required maxlength="200" /></label
+          ><label
+            >Genre<select name="genre">
+              <option>Action</option>
+              <option>Adventure</option>
+              <option>Comedy</option>
+              <option>Drama</option>
+              <option>Family</option>
+              <option>History</option>
+              <option>Science Fiction</option>
+              <option>Thriller</option>
+            </select></label
+          ><label
+            >Release year<input
+              name="year"
+              type="number"
+              min="1888"
+              max="2100" /></label
+          ><label>Country<input name="country" maxlength="100" /></label
+          ><label>Director<input name="director" maxlength="200" /></label
+          ><label>Cast<input name="actors" maxlength="500" /></label
+          ><label class="wide"
+            >Description<textarea
+              name="plot"
+              rows="3"
+              maxlength="2500"
+            ></textarea></label
+          ><label class="wide"
+            >Poster URL<input
+              name="image"
+              type="text"
+              maxlength="1500000"
+              placeholder="https://…" /></label
+          ><label class="wide"
+            >Or upload a poster<input
+              id="poster-file"
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+            /><small>JPEG, PNG or WebP, up to 1 MB.</small></label
+          >
+        </div>
+        <img
+          id="poster-preview"
+          class="poster-preview"
+          alt="Poster preview"
+          hidden
+        />
+        <p id="editor-message" role="status"></p>
+        <button class="primary" type="submit">Save movie</button>
+      </form>
+    </dialog>
+    <dialog id="help" aria-labelledby="help-title">
+      <div class="dialog-head">
+        <h2 id="help-title">The rental journey.</h2>
+        <button data-close="help" aria-label="Close help">×</button>
+      </div>
+      <ol class="help-list">
+        <li>
+          <strong>Discover.</strong> Open a movie and add it to your queue.
+        </li>
+        <li>
+          <strong>Dispatch.</strong> Switch to Administrator, choose the member,
+          and dispatch their next active title.
+        </li>
+        <li>
+          <strong>Watch.</strong> Switch to Member and mark the movie as watched
+          in At home.
+        </li>
+        <li>
+          <strong>Return.</strong> An administrator registers the return. The
+          next active queued movie dispatches automatically.
+        </li>
+      </ol>
+      <p>
+        This is a local demo. The workspace switch demonstrates roles; it is not
+        account authentication. No real rental, payment, or streaming service is
+        connected.
+      </p>
+      <p>The original Java/JSP application remains in the GitHub repository.</p>
+    </dialog>
+    <dialog id="confirm" aria-labelledby="confirm-title">
+      <form method="dialog">
+        <p class="eyebrow">START FRESH</p>
+        <h2 id="confirm-title">Reset your demo?</h2>
+        <p>
+          This restores the sample catalog and clears the profiles, queues, and
+          rentals stored by this demo in this browser.
+        </p>
+        <div class="actions">
+          <button value="cancel">Keep my demo</button
+          ><button class="primary" value="reset">Reset demo</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

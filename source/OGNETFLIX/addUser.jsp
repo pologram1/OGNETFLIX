@@ -1,3 +1,4 @@
+<%-- Registration handler; creates the account through the authentication helper. --%>
 <%@ page import="java.lang.*"%>
 <%@ page import="ut.*"%>
 <%//Import the java.sql package to use the ResultSet class %>

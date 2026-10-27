@@ -1,3 +1,4 @@
+<%-- Customer returned-rental history and links to movie details. --%>
 
 <%@ page import="java.lang.*"%>
 <%//Import the java.sql package to use the ResultSet class %>

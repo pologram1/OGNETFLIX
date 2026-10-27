@@ -1,3 +1,4 @@
+/* Server catalog, queue, and rental operations called by JSP pages. Deactivation preserves IDs; rental return/dispatch logic lives here. Separate from the browser model. */
 
 //This class belongs to the ut package
 package ut;

@@ -1,3 +1,4 @@
+<%-- Customer entry page and genre navigation after authentication. --%>
 <%@ page import="java.lang.*"%>
 <%//Import the java.sql package to use the ResultSet class %>
 <%@ page import="java.sql.*"%>

@@ -1,3 +1,4 @@
+<%-- Updates movie fields; retains the old poster when the replacement field is empty. --%>
 
 <%@ page import="java.lang.*"%>
 <%//Import the ut package for accessing the database %>
