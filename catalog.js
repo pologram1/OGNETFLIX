@@ -1,0 +1,12 @@
+// Browser demo metadata; the supplied archive contains the original poster assets.
+export const movies=[
+ {id:'dark-knight',title:'The Dark Knight',genre:'Action',year:2008,image:'darkknight.jpg',plot:'Gotham’s masked protector faces a criminal who turns the city against itself.',director:'Christopher Nolan',actors:'Christian Bale, Heath Ledger',country:'United States'},
+ {id:'back-to-the-future',title:'Back to the Future',genre:'Science Fiction',year:1985,image:'Back_to_the_Future.jpg',plot:'A teenager’s unexpected trip into the past puts his own future at risk.',director:'Robert Zemeckis',actors:'Michael J. Fox, Christopher Lloyd',country:'United States'},
+ {id:'paddington',title:'Paddington 2',genre:'Family',year:2017,image:'Paddington2.jpg',plot:'A kind-hearted bear’s search for the perfect gift becomes an unexpected adventure.',director:'Paul King',actors:'Ben Whishaw, Hugh Grant',country:'United Kingdom'},
+ {id:'300',title:'300',genre:'Action',year:2006,image:'300.jpg',plot:'A small Spartan force stands against an invading army in a stylized historical action film.',director:'Zack Snyder',actors:'Gerard Butler, Lena Headey',country:'United States'},
+ {id:'annabelle',title:'Annabelle',genre:'Thriller',year:2014,image:'anabel.jpg',plot:'A vintage doll becomes the center of a family’s increasingly frightening experiences.',director:'John R. Leonetti',actors:'Annabelle Wallis, Ward Horton',country:'United States'},
+ {id:'cleopatra',title:'Cleopatra',genre:'History',year:1963,image:'Cleopatra.jpg',plot:'Egypt’s queen navigates power, alliances, and the ambitions of Rome.',director:'Joseph L. Mankiewicz',actors:'Elizabeth Taylor, Richard Burton',country:'United States'},
+ {id:'grownups',title:'Grown Ups',genre:'Comedy',year:2010,image:'Grownups.jpg',plot:'Childhood friends reunite for a weekend with their families.',director:'Dennis Dugan',actors:'Adam Sandler, Kevin James',country:'United States'},
+ {id:'green-lantern',title:'Green Lantern',genre:'Adventure',year:2011,image:'greenlantern.jpg',plot:'A test pilot is chosen to join a cosmic peacekeeping force.',director:'Martin Campbell',actors:'Ryan Reynolds, Blake Lively',country:'United States'},
+ {id:'ben10',title:'Ben 10',genre:'Family',year:null,image:'ben10.jpg',plot:'A young hero discovers extraordinary abilities through a mysterious alien device.',director:'',actors:'',country:''}
+].map(m=>({...m,image:'assets/posters/'+m.image,active:true}));

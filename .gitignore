@@ -1,0 +1,8 @@
+node_modules/
+_site/
+*.class
+*.log
+.env
+.env.*
+!.env.example
+source/**/WEB-INF/lib/*.jar
